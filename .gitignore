@@ -1,0 +1,49 @@
+# Docs (propuesta, informes en markdown)
+docs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Notebooks
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Data
+data/*.csv
+data/*.csv.gz
+data/*.jsonl
+data/*.jsonl.gz
+!data/.gitkeep
+
+# Models & artifacts
+models/*.pkl
+models/*.joblib
+models/*.bin
+models/*.index
+!models/.gitkeep
+
+# MLflow
+mlruns/
+*.mlflow
+
+# DVC
+.dvc/
+*.dvc
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

@@ -18,6 +18,7 @@ data/*.csv
 data/*.csv.gz
 data/*.jsonl
 data/*.jsonl.gz
+data/*.parquet
 !data/.gitkeep
 
 # Models & artifacts
@@ -25,6 +26,7 @@ models/*.pkl
 models/*.joblib
 models/*.bin
 models/*.index
+models/*.npy
 !models/.gitkeep
 
 # MLflow

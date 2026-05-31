@@ -1,0 +1,35 @@
+{
+  "model_name": "DistilBERT + LogisticRegression",
+  "model_type": "distilbert_base_uncased + logreg",
+  "sample_size": 100000,
+  "batch_size": 256,
+  "max_length": 128,
+  "embedding_dim": 768,
+  "training_time_seconds": 163.55,
+  "f1_macro": 0.666,
+  "precision_macro": 0.6671,
+  "recall_macro": 0.6653,
+  "accuracy": 0.6653,
+  "class_labels": [
+    "Negativo",
+    "Neutro",
+    "Positivo"
+  ],
+  "confusion_matrix": [
+    [
+      3484,
+      1294,
+      222
+    ],
+    [
+      1364,
+      2767,
+      869
+    ],
+    [
+      256,
+      1016,
+      3728
+    ]
+  ]
+}

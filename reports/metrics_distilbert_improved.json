@@ -1,0 +1,82 @@
+{
+  "baseline": "DistilBERT frozen + LogisticRegression",
+  "improved_results": [
+    {
+      "model_name": "Random Forest",
+      "f1_macro": 0.6279,
+      "precision_macro": 0.6338,
+      "recall_macro": 0.6248,
+      "accuracy": 0.6248,
+      "training_time_seconds": 574.98
+    },
+    {
+      "model_name": "Random Forest",
+      "f1_macro": 0.632,
+      "precision_macro": 0.6378,
+      "recall_macro": 0.6287,
+      "accuracy": 0.6287,
+      "training_time_seconds": 487.3
+    },
+    {
+      "model_name": "XGBoost",
+      "f1_macro": 0.6644,
+      "precision_macro": 0.6674,
+      "recall_macro": 0.6624,
+      "accuracy": 0.6624,
+      "training_time_seconds": 521.46
+    },
+    {
+      "model_name": "DistilBERT + LoRA",
+      "f1_macro": 0.7146,
+      "precision_macro": 0.7211,
+      "recall_macro": 0.7111,
+      "accuracy": 0.7111,
+      "training_time_seconds": 2219.59
+    },
+    {
+      "model_name": "DistilBERT + Full FT",
+      "f1_macro": 0.73,
+      "precision_macro": 0.7364,
+      "recall_macro": 0.7265,
+      "accuracy": 0.7265,
+      "training_time_seconds": 3645.33
+    }
+  ],
+  "engineered_features": [
+    "mayusculas_count",
+    "char_total",
+    "exclamacion_count",
+    "interrogacion_count",
+    "porcentaje_mayusculas",
+    "puntuacion_emocional",
+    "total_tokens",
+    "unique_types",
+    "ttr"
+  ],
+  "sample_size": 100000,
+  "best_model": {
+    "model_name": "DistilBERT + Full FT",
+    "f1_macro": 0.73,
+    "precision_macro": 0.7364,
+    "recall_macro": 0.7265,
+    "accuracy": 0.7265,
+    "training_time_seconds": 3645.33,
+    "confusion_matrix": [
+      [
+        3546,
+        1362,
+        92
+      ],
+      [
+        1115,
+        3364,
+        521
+      ],
+      [
+        84,
+        928,
+        3988
+      ]
+    ]
+  }
+}

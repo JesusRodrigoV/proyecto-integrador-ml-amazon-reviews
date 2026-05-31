@@ -1,0 +1,43 @@
+{
+  "total_rows": 2500000,
+  "total_columns": 14,
+  "columns": [
+    "rating",
+    "text",
+    "parent_asin",
+    "main_category",
+    "mayusculas_count",
+    "char_total",
+    "exclamacion_count",
+    "interrogacion_count",
+    "porcentaje_mayusculas",
+    "puntuacion_emocional",
+    "total_tokens",
+    "unique_types",
+    "ttr",
+    "sentiment"
+  ],
+  "rating_distribution": {
+    "1.0": 500000,
+    "2.0": 500000,
+    "3.0": 500000,
+    "4.0": 500000,
+    "5.0": 500000
+  },
+  "sentiment_distribution": {
+    "0": 1000000,
+    "1": 500000,
+    "2": 1000000
+  },
+  "features_engineered": [
+    "mayusculas_count",
+    "char_total",
+    "exclamacion_count",
+    "interrogacion_count",
+    "porcentaje_mayusculas",
+    "puntuacion_emocional",
+    "total_tokens",
+    "unique_types",
+    "ttr"
+  ]
+}

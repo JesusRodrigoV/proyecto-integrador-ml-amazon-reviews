@@ -111,4 +111,9 @@ if __name__ == "__main__":
         print("\n  Sin ngrok. MLflow solo accesible via localhost.")
         print(f"  MLFLOW_TRACKING_URI = 'http://localhost:{PORT}'")
         print(f"\n  Ctrl+C para detener.\n")
-    signal.pause()
+
+    try:
+        while True:
+            time.sleep(1)
+    except KeyboardInterrupt:
+        cleanup()

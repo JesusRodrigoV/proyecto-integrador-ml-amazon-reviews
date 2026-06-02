@@ -3,14 +3,6 @@
   "improved_results": [
     {
       "model_name": "Random Forest",
-      "f1_macro": 0.6279,
-      "precision_macro": 0.6338,
-      "recall_macro": 0.6248,
-      "accuracy": 0.6248,
-      "training_time_seconds": 574.98
-    },
-    {
-      "model_name": "Random Forest",
       "f1_macro": 0.632,
       "precision_macro": 0.6378,
       "recall_macro": 0.6287,

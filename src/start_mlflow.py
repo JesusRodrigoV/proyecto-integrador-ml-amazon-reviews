@@ -113,6 +113,7 @@ def cleanup(signum=None, frame=None):
 if __name__ == "__main__":
     signal.signal(signal.SIGINT, cleanup)
     signal.signal(signal.SIGTERM, cleanup)
+    sys.stdout.reconfigure(line_buffering=True)
     print("\n  Iniciando MLflow tracking server + ngrok...\n")
     start_mlflow()
     url = start_ngrok()
@@ -120,7 +121,7 @@ if __name__ == "__main__":
         print(f"\n  {'=' * 55}")
         print(f"  MLFLOW_TRACKING_URI = '{url}'")
         print(f"  {'=' * 55}")
-        print(f"\n  Dashboard: {url}/#/experiments/0")
+        print(f"\n  Dashboard: {url}")
         print(f"  DB local:  {DB_PATH}")
         print(f"  Artifacts: {ARTIFACTS}")
         print(f"\n  {'=' * 55}")
@@ -128,7 +129,7 @@ if __name__ == "__main__":
         print(f"  Bash:        export MLFLOW_TRACKING_URI='{url}'")
         print(f"  {'=' * 55}")
         print(f"\n  Ctrl+C para detener.\n")
-        webbrowser.open(f"{url}/#/experiments/0")
+        webbrowser.open(f"{url}")
     else:
         print("\n  Sin ngrok. MLflow solo accesible via localhost.")
         print(f"  MLFLOW_TRACKING_URI = 'http://localhost:{PORT}'")

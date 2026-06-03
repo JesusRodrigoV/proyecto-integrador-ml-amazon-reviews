@@ -123,6 +123,10 @@ if __name__ == "__main__":
         print(f"\n  Dashboard: {url}/#/experiments/0")
         print(f"  DB local:  {DB_PATH}")
         print(f"  Artifacts: {ARTIFACTS}")
+        print(f"\n  {'=' * 55}")
+        print(f"  PowerShell:  $env:MLFLOW_TRACKING_URI='{url}'")
+        print(f"  Bash:        export MLFLOW_TRACKING_URI='{url}'")
+        print(f"  {'=' * 55}")
         print(f"\n  Ctrl+C para detener.\n")
         webbrowser.open(f"{url}/#/experiments/0")
     else:

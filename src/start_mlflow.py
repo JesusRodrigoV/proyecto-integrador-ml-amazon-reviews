@@ -83,7 +83,7 @@ def get_ngrok_url():
 
 def start_ngrok():
     p = subprocess.Popen(
-        ["ngrok", "http", f"http://127.0.0.1:{PORT}"],
+        ["ngrok", "http", f"http://127.0.0.1:{PORT}", "--host-header=rewrite"],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )

@@ -25,6 +25,7 @@ MLFLOW_HOME.mkdir(parents=True, exist_ok=True)
 DB_PATH = MLFLOW_HOME / "mlflow.db"
 ARTIFACTS = MLFLOW_HOME / "artifacts"
 ARTIFACTS.mkdir(exist_ok=True)
+ARTIFACTS_URI = ARTIFACTS.as_uri()
 LOG_PATH = MLFLOW_HOME / "server.log"
 
 PORT = 5000
@@ -50,7 +51,8 @@ def start_mlflow():
         "--host", "0.0.0.0",
         "--port", str(PORT),
         "--backend-store-uri", f"sqlite:///{DB_PATH}",
-        "--default-artifact-root", str(ARTIFACTS),
+        "--default-artifact-root", ARTIFACTS_URI,
+        "--serve-artifacts",
     ]
     log = open(LOG_PATH, "w")
     p = subprocess.Popen(cmd, stdout=log, stderr=subprocess.STDOUT)
@@ -123,7 +125,8 @@ if __name__ == "__main__":
         print(f"  {'=' * 55}")
         print(f"\n  Dashboard: {url}")
         print(f"  DB local:  {DB_PATH}")
-        print(f"  Artifacts: {ARTIFACTS}")
+        print(f"  Artifacts: {ARTIFACTS_URI}")
+        print(f"  (serve-artifacts habilitado — clientes suben modelos via HTTP)")
         print(f"\n  {'=' * 55}")
         print(f"  PowerShell:  $env:MLFLOW_TRACKING_URI='{url}'")
         print(f"  Bash:        export MLFLOW_TRACKING_URI='{url}'")

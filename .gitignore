@@ -1,5 +1,7 @@
-# Docs (propuesta, informes en markdown)
-# docs/
+# Docs (propuesta, informes en markdown, reglas de agente)
+docs/
+.gga
+.atl/
 
 # Python
 __pycache__/

@@ -20,14 +20,17 @@ CRISP-DM — 5 fases progresivas:
 
 ```
 ├── data/              # Dataset original y subsets muestreados
-├── notebooks/         # Notebooks por fase
-│   ├── f1_extraccion_muestreo.ipynb   # F1: Extracción + muestreo Bernoulli
-│   ├── f1_eda_balanceo_clustering.ipynb # F1: EDA, balanceo, clustering
-│   ├── f2_modelado_clasico.ipynb       # F2: Baseline + SVC + XGBoost
-│   └── f2_automl_lazypredict.ipynb     # F2: AutoML benchmark (LazyPredict)
+├── notebooks/         # Notebooks por fase (estandarizados)
+│   ├── f1_eda_definitivo.ipynb       # F1: EDA + Canonical Dataset generation
+│   ├── f2a_modelado_clasico.ipynb    # F2: ML Clásico (LogReg, RF, LightGBM, XGB)
+│   ├── f2b_automl_lazypredict.ipynb  # F2: AutoML Benchmark (LazyPredict)
+│   ├── f3a_extraer_embeddings.ipynb  # F3: Embeddings generation (DistilBERT)
+│   ├── f3b_distilbert.ipynb          # F3: LogisticRegression sobre embeddings
+│   ├── f3c_clasicos.ipynb            # F3: RF + XGBoost sobre embeddings
+│   └── f3d_lora_ensemble.ipynb      # F3: Fine-tuning LoRA + Stacking Ensemble
 ├── src/               # Scripts modulares (entrenamiento, evaluación, inferencia)
 ├── models/            # Artefactos, índices vectoriales, logs de tracking
-├── reports/           # Informe final, tablas comparativas, gráficos interpretados
+├── reports/           # Métricas, gráficos y reportes unificados
 ├── app/               # Demo funcional del sistema de consulta
 ├── config/            # Configuración de experimentos y AutoML
 ├── docs/              # Documentos de propuesta e informes (gitignored)
@@ -35,7 +38,7 @@ CRISP-DM — 5 fases progresivas:
 └── REQUIREMENTS.txt
 ```
 
-## Setup
+## Setup (Local)
 
 ```bash
 git clone git@github.com:JesusRodrigoV/proyecto-integrador-ml-amazon-reviews.git
@@ -44,13 +47,19 @@ python -m venv .venv && source .venv/bin/activate
 pip install -r REQUIREMENTS.txt
 ```
 
-## Estado de Fase 2
+## Estado del Proyecto
 
-Los notebooks de modelado clásico (`f2_modelado_clasico.ipynb`) y AutoML (`f2_automl_lazypredict.ipynb`) están implementados. Pendiente para próxima iteración:
-- [ ] Tabla comparativa unificada con métricas F1-score macro
-- [ ] Evaluación sobre la misma partición 80/20 estratificada
-- [ ] Análisis de error por clase
-- [ ] Integración con MLflow para tracking de experimentos
+- **Fase 1 (EDA & Prep)**: Finalizada ✅. Dataset canónico de 2.5M de filas generado en `data/office_products_balanced.parquet`.
+- **Fase 2 (ML Clásico)**: Finalizada ✅. Baseline establecido con `RandomForest` y `LightGBM`.
+- **Fase 3 (NLP & DL)**: En progreso ⏳. Implementación de `DistilBERT` (frozen & fine-tuned via LoRA) y Stacking Ensemble.
+- **Fase 4 (MLOps & RAG)**: Pendiente 🔜.
+
+## Lineamientos Críticos (Rubrica)
+
+- **Variable Objetivo**: 3 clases (1-2 Negativo, 3 Neutro, 4-5 Positivo).
+- **Tratamiento Imbalance**: `class_weights='balanced'` obligatorio en todos los modelos.
+- **Limpieza**: Filtro de `word_count >= 5` para evitar ruido semántico.
+- **Escalabilidad**: Uso de `Parquet` + `Polars` para manejo eficiente de 2.5M de registros.
 
 ## Equipo
 

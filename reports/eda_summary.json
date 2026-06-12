@@ -15,7 +15,7 @@
     "total_tokens",
     "unique_types",
     "ttr",
-    "sentiment"
+    "target_class"
   ],
   "rating_distribution": {
     "1.0": 500000,
@@ -24,10 +24,10 @@
     "4.0": 500000,
     "5.0": 500000
   },
-  "sentiment_distribution": {
-    "0": 1000000,
-    "1": 500000,
-    "2": 1000000
+  "target_class_distribution": {
+    "Negativo": 1000000,
+    "Neutro": 500000,
+    "Positivo": 1000000
   },
   "features_engineered": [
     "mayusculas_count",

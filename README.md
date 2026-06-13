@@ -11,7 +11,7 @@ CRISP-DM — 5 fases progresivas:
 | Fase | Contenido |
 |------|-----------|
 | **Fase 1** | Propuesta del proyecto (definición, justificación, métricas, cronograma) ✅ |
-| **Fase 2** | ML Clásico: 3 modelos + AutoML (LazyPredict) + segmentación no supervisada |
+| **Fase 2** | ML Clásico: 3 modelos + AutoML (FLAML) + segmentación no supervisada |
 | **Fase 3** | Deep Learning: DistilBERT en modo inferencia, embeddings + clasificador |
 | **Fase 4** | MLOps (MLflow + DVC) + RAG (FAISS/ChromaDB) + demo funcional |
 | **Fase 5** | Integración final, informe CRISP-DM, análisis ético y defensa |
@@ -23,7 +23,7 @@ CRISP-DM — 5 fases progresivas:
 ├── notebooks/         # Notebooks por fase (estandarizados)
 │   ├── f1_eda_definitivo.ipynb       # F1: EDA + Canonical Dataset generation
 │   ├── f2a_modelado_clasico.ipynb    # F2: ML Clásico (LogReg, RF, LightGBM, XGB)
-│   ├── f2b_automl_lazypredict.ipynb  # F2: AutoML Benchmark (LazyPredict)
+│   ├── f2b_automl_flaml.ipynb        # F2: AutoML Benchmark (FLAML)
 │   ├── f3a_extraer_embeddings.ipynb  # F3: Embeddings generation (DistilBERT)
 │   ├── f3b_distilbert.ipynb          # F3: LogisticRegression sobre embeddings
 │   ├── f3c_clasicos.ipynb            # F3: RF + XGBoost sobre embeddings

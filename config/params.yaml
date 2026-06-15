@@ -1,0 +1,31 @@
+data:
+  # Embeddings .npy generados por F3-A (en Colab/GPU)
+  # Descargar desde Drive a models/embeddings/ antes de build_index
+  embeddings_dir: "models/embeddings"
+  train_embeddings: "models/embeddings/train_embeddings.npy"
+  val_embeddings: "models/embeddings/val_embeddings.npy"
+  test_embeddings: "models/embeddings/test_embeddings.npy"
+  train_labels: "models/embeddings/train_labels.npy"
+  val_labels: "models/embeddings/val_labels.npy"
+  test_labels: "models/embeddings/test_labels.npy"
+  train_texts: "models/embeddings/train_texts.pkl"
+  val_texts: "models/embeddings/val_texts.pkl"
+  test_texts: "models/embeddings/test_texts.pkl"
+
+model:
+  transformer_name: "distilbert-base-uncased"
+  logreg_model_path: "models/classifier.pkl"
+
+faiss:
+  index_dir: "models/faiss_index"
+  index_path: "models/faiss_index/index.faiss"
+  id_map_path: "models/faiss_index/id_map.pkl"
+  embedding_dim: 768
+
+search:
+  default_top_k: 10
+  similarity_threshold: 0.60
+
+mlflow:
+  experiment_name: "f4_rag"
+  tracking_uri: "http://localhost:5000"

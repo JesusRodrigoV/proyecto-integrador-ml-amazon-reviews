@@ -1,169 +1,165 @@
 [
   {
-    "model_name": "Logistic Regression (Baseline)",
-    "model_type": "logistic_regression_baseline",
-    "f1_macro": 0.6575,
-    "precision_macro": 0.6631,
-    "recall_macro": 0.6609,
-    "accuracy": 0.6894,
+    "model_name": "Logistic Regression",
+    "model_type": "logistic_regression",
+    "f1_macro": 0.605,
+    "accuracy": 0.6291,
+    "training_time_sec": 770.7,
     "confusion_matrix": [
       [
-        56264,
-        19045,
-        4717
+        46005,
+        19938,
+        6081
       ],
       [
-        11110,
-        20745,
-        8161
+        9588,
+        18492,
+        7934
       ],
       [
-        4604,
-        14481,
-        60873
+        6827,
+        16395,
+        48740
       ]
     ],
     "per_class": {
       "Negativo": {
-        "precision": 0.7817,
-        "recall": 0.7031,
-        "f1": 0.7403
+        "precision": 0.737,
+        "recall": 0.6387,
+        "f1": 0.6844
       },
       "Neutro": {
-        "precision": 0.3822,
-        "recall": 0.5184,
-        "f1": 0.44
+        "precision": 0.3373,
+        "recall": 0.5135,
+        "f1": 0.4071
       },
       "Positivo": {
-        "precision": 0.8254,
-        "recall": 0.7613,
-        "f1": 0.7921
+        "precision": 0.7767,
+        "recall": 0.6773,
+        "f1": 0.7236
       }
     }
   },
   {
     "model_name": "Random Forest",
     "model_type": "random_forest",
-    "f1_macro": 0.5492,
-    "precision_macro": 0.6256,
-    "recall_macro": 0.5839,
-    "accuracy": 0.6855,
+    "f1_macro": 0.5829,
+    "accuracy": 0.6207,
+    "training_time_sec": 108.1,
     "confusion_matrix": [
       [
-        67533,
-        1703,
-        10790
+        46830,
+        14760,
+        10434
       ],
       [
-        21109,
-        3035,
-        15872
+        11426,
+        14331,
+        10257
       ],
       [
-        11998,
-        1431,
-        66529
+        7381,
+        14012,
+        50569
       ]
     ],
     "per_class": {
       "Negativo": {
-        "precision": 0.671,
-        "recall": 0.8439,
-        "f1": 0.7476
+        "precision": 0.7135,
+        "recall": 0.6502,
+        "f1": 0.6804
       },
       "Neutro": {
-        "precision": 0.492,
-        "recall": 0.0758,
-        "f1": 0.1314
+        "precision": 0.3325,
+        "recall": 0.3979,
+        "f1": 0.3623
       },
       "Positivo": {
-        "precision": 0.7139,
-        "recall": 0.832,
-        "f1": 0.7685
+        "precision": 0.7096,
+        "recall": 0.7027,
+        "f1": 0.7062
       }
     }
   },
   {
     "model_name": "LightGBM",
     "model_type": "lightgbm",
-    "f1_macro": 0.62,
-    "precision_macro": 0.6244,
-    "recall_macro": 0.6225,
-    "accuracy": 0.6519,
+    "f1_macro": 0.6181,
+    "accuracy": 0.6475,
+    "training_time_sec": 816.6,
     "confusion_matrix": [
       [
-        54511,
-        18603,
-        6912
+        47749,
+        17714,
+        6561
       ],
       [
-        11714,
-        19030,
-        9272
+        10137,
+        17687,
+        8190
       ],
       [
-        8114,
-        15008,
-        56836
+        6661,
+        14189,
+        51112
       ]
     ],
     "per_class": {
       "Negativo": {
-        "precision": 0.7333,
-        "recall": 0.6812,
-        "f1": 0.7063
+        "precision": 0.7398,
+        "recall": 0.663,
+        "f1": 0.6993
       },
       "Neutro": {
-        "precision": 0.3615,
-        "recall": 0.4756,
-        "f1": 0.4108
+        "precision": 0.3567,
+        "recall": 0.4911,
+        "f1": 0.4132
       },
       "Positivo": {
-        "precision": 0.7784,
-        "recall": 0.7108,
-        "f1": 0.7431
+        "precision": 0.776,
+        "recall": 0.7103,
+        "f1": 0.7417
       }
     }
   },
   {
     "model_name": "XGBoost",
     "model_type": "xgboost",
-    "f1_macro": 0.3015,
-    "precision_macro": 0.5909,
-    "recall_macro": 0.4152,
-    "accuracy": 0.3269,
+    "f1_macro": 0.5925,
+    "accuracy": 0.6188,
+    "training_time_sec": 2346.9,
     "confusion_matrix": [
       [
-        4151,
-        70890,
-        4985
+        49167,
+        17236,
+        5621
       ],
       [
-        512,
-        34286,
-        5218
+        11675,
+        17408,
+        6931
       ],
       [
-        338,
-        52672,
-        26948
+        10832,
+        16327,
+        44803
       ]
     ],
     "per_class": {
       "Negativo": {
-        "precision": 0.83,
-        "recall": 0.0519,
-        "f1": 0.0976
+        "precision": 0.686,
+        "recall": 0.6826,
+        "f1": 0.6843
       },
       "Neutro": {
-        "precision": 0.2172,
-        "recall": 0.8568,
-        "f1": 0.3466
+        "precision": 0.3415,
+        "recall": 0.4834,
+        "f1": 0.4003
       },
       "Positivo": {
-        "precision": 0.7254,
-        "recall": 0.337,
-        "f1": 0.4602
+        "precision": 0.7812,
+        "recall": 0.6226,
+        "f1": 0.6929
       }
     }
   }

@@ -1,0 +1,86 @@
+[
+  {
+    "model_name": "Random Forest",
+    "training_time_seconds": 1599.23,
+    "f1_macro": 0.6285,
+    "precision_macro": 0.6353,
+    "recall_macro": 0.6252,
+    "accuracy": 0.6252,
+    "per_class": {
+      "Negativo": {
+        "precision": 0.6276,
+        "recall": 0.656,
+        "f1": 0.6415
+      },
+      "Neutro": {
+        "precision": 0.5071,
+        "recall": 0.5526,
+        "f1": 0.5288
+      },
+      "Positivo": {
+        "precision": 0.7711,
+        "recall": 0.6671,
+        "f1": 0.7153
+      }
+    },
+    "confusion_matrix": [
+      [
+        16399,
+        7347,
+        1254
+      ],
+      [
+        7489,
+        13814,
+        3697
+      ],
+      [
+        2241,
+        6082,
+        16677
+      ]
+    ]
+  },
+  {
+    "model_name": "XGBoost",
+    "training_time_seconds": 1956.03,
+    "f1_macro": 0.6599,
+    "precision_macro": 0.6637,
+    "recall_macro": 0.6576,
+    "accuracy": 0.6576,
+    "per_class": {
+      "Negativo": {
+        "precision": 0.6667,
+        "recall": 0.6868,
+        "f1": 0.6766
+      },
+      "Neutro": {
+        "precision": 0.5384,
+        "recall": 0.5708,
+        "f1": 0.5541
+      },
+      "Positivo": {
+        "precision": 0.7861,
+        "recall": 0.715,
+        "f1": 0.7489
+      }
+    },
+    "confusion_matrix": [
+      [
+        17171,
+        6709,
+        1120
+      ],
+      [
+        6986,
+        14270,
+        3744
+      ],
+      [
+        1599,
+        5525,
+        17876
+      ]
+    ]
+  }
+]

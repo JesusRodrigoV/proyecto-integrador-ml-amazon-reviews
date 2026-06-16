@@ -1,74 +1,216 @@
 {
-  "baseline": "DistilBERT frozen + LogisticRegression",
+  "sample_size": 500000,
   "improved_results": [
     {
       "model_name": "Random Forest",
-      "f1_macro": 0.632,
-      "precision_macro": 0.6378,
-      "recall_macro": 0.6287,
-      "accuracy": 0.6287,
-      "training_time_seconds": 487.3
+      "training_time_seconds": 1599.23,
+      "f1_macro": 0.6285,
+      "precision_macro": 0.6353,
+      "recall_macro": 0.6252,
+      "accuracy": 0.6252,
+      "per_class": {
+        "Negativo": {
+          "precision": 0.6276,
+          "recall": 0.656,
+          "f1": 0.6415
+        },
+        "Neutro": {
+          "precision": 0.5071,
+          "recall": 0.5526,
+          "f1": 0.5288
+        },
+        "Positivo": {
+          "precision": 0.7711,
+          "recall": 0.6671,
+          "f1": 0.7153
+        }
+      },
+      "confusion_matrix": [
+        [
+          16399,
+          7347,
+          1254
+        ],
+        [
+          7489,
+          13814,
+          3697
+        ],
+        [
+          2241,
+          6082,
+          16677
+        ]
+      ]
     },
     {
       "model_name": "XGBoost",
-      "f1_macro": 0.6644,
-      "precision_macro": 0.6674,
-      "recall_macro": 0.6624,
-      "accuracy": 0.6624,
-      "training_time_seconds": 521.46
+      "training_time_seconds": 1956.03,
+      "f1_macro": 0.6599,
+      "precision_macro": 0.6637,
+      "recall_macro": 0.6576,
+      "accuracy": 0.6576,
+      "per_class": {
+        "Negativo": {
+          "precision": 0.6667,
+          "recall": 0.6868,
+          "f1": 0.6766
+        },
+        "Neutro": {
+          "precision": 0.5384,
+          "recall": 0.5708,
+          "f1": 0.5541
+        },
+        "Positivo": {
+          "precision": 0.7861,
+          "recall": 0.715,
+          "f1": 0.7489
+        }
+      },
+      "confusion_matrix": [
+        [
+          17171,
+          6709,
+          1120
+        ],
+        [
+          6986,
+          14270,
+          3744
+        ],
+        [
+          1599,
+          5525,
+          17876
+        ]
+      ]
     },
     {
       "model_name": "DistilBERT + LoRA",
-      "f1_macro": 0.7146,
-      "precision_macro": 0.7211,
-      "recall_macro": 0.7111,
-      "accuracy": 0.7111,
-      "training_time_seconds": 2219.59
+      "training_time_seconds": 5502.7,
+      "f1_macro": 0.7399,
+      "precision_macro": 0.7415,
+      "recall_macro": 0.7388,
+      "accuracy": 0.7388,
+      "per_class": {
+        "Negativo": {
+          "precision": 0.7383,
+          "recall": 0.7599,
+          "f1": 0.7489
+        },
+        "Neutro": {
+          "precision": 0.6253,
+          "recall": 0.6373,
+          "f1": 0.6313
+        },
+        "Positivo": {
+          "precision": 0.8609,
+          "recall": 0.8192,
+          "f1": 0.8396
+        }
+      },
+      "confusion_matrix": [
+        [
+          18997,
+          5585,
+          418
+        ],
+        [
+          6177,
+          15933,
+          2890
+        ],
+        [
+          558,
+          3961,
+          20481
+        ]
+      ]
     },
     {
-      "model_name": "DistilBERT + Full FT",
-      "f1_macro": 0.73,
-      "precision_macro": 0.7364,
-      "recall_macro": 0.7265,
-      "accuracy": 0.7265,
-      "training_time_seconds": 3645.33
+      "model_name": "Stacking Ensemble",
+      "training_time_seconds": 0,
+      "f1_macro": 0.7399,
+      "precision_macro": 0.7415,
+      "recall_macro": 0.7388,
+      "accuracy": 0.7388,
+      "per_class": {
+        "Negativo": {
+          "precision": 0.7383,
+          "recall": 0.7599,
+          "f1": 0.7489
+        },
+        "Neutro": {
+          "precision": 0.6253,
+          "recall": 0.6373,
+          "f1": 0.6313
+        },
+        "Positivo": {
+          "precision": 0.8609,
+          "recall": 0.8192,
+          "f1": 0.8396
+        }
+      },
+      "confusion_matrix": [
+        [
+          18997,
+          5585,
+          418
+        ],
+        [
+          6177,
+          15933,
+          2890
+        ],
+        [
+          558,
+          3961,
+          20481
+        ]
+      ]
+    },
+    {
+      "model_name": "Stacking + Threshold Tuning",
+      "training_time_seconds": 0,
+      "f1_macro": 0.7429,
+      "precision_macro": 0.7491,
+      "recall_macro": 0.7396,
+      "accuracy": 0.7396,
+      "per_class": {
+        "Negativo": {
+          "precision": 0.7616,
+          "recall": 0.7229,
+          "f1": 0.7418
+        },
+        "Neutro": {
+          "precision": 0.6113,
+          "recall": 0.691,
+          "f1": 0.6487
+        },
+        "Positivo": {
+          "precision": 0.8744,
+          "recall": 0.8048,
+          "f1": 0.8382
+        }
+      },
+      "confusion_matrix": [
+        [
+          18073,
+          6564,
+          363
+        ],
+        [
+          5198,
+          17276,
+          2526
+        ],
+        [
+          459,
+          4421,
+          20120
+        ]
+      ]
     }
   ],
-  "engineered_features": [
-    "mayusculas_count",
-    "char_total",
-    "exclamacion_count",
-    "interrogacion_count",
-    "porcentaje_mayusculas",
-    "puntuacion_emocional",
-    "total_tokens",
-    "unique_types",
-    "ttr"
-  ],
-  "sample_size": 100000,
-  "best_model": {
-    "model_name": "DistilBERT + Full FT",
-    "f1_macro": 0.73,
-    "precision_macro": 0.7364,
-    "recall_macro": 0.7265,
-    "accuracy": 0.7265,
-    "training_time_seconds": 3645.33,
-    "confusion_matrix": [
-      [
-        3546,
-        1362,
-        92
-      ],
-      [
-        1115,
-        3364,
-        521
-      ],
-      [
-        84,
-        928,
-        3988
-      ]
-    ]
-  }
+  "fase2_comparison_note": "F2 metrics from f2_modelado_clasico and f2_automl_lazypredict notebooks"
 }

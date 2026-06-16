@@ -1,15 +1,13 @@
 {
   "model_name": "DistilBERT + LogisticRegression",
   "model_type": "distilbert_base_uncased + logreg",
-  "sample_size": 100000,
-  "batch_size": 256,
-  "max_length": 128,
+  "sample_size": 500000,
   "embedding_dim": 768,
-  "training_time_seconds": 163.55,
-  "f1_macro": 0.666,
-  "precision_macro": 0.6671,
-  "recall_macro": 0.6653,
-  "accuracy": 0.6653,
+  "training_time_seconds": 835.74,
+  "f1_macro": 0.6705,
+  "precision_macro": 0.6716,
+  "recall_macro": 0.6697,
+  "accuracy": 0.6697,
   "class_labels": [
     "Negativo",
     "Neutro",
@@ -17,19 +15,39 @@
   ],
   "confusion_matrix": [
     [
-      3484,
-      1294,
-      222
+      17556,
+      6248,
+      1196
     ],
     [
-      1364,
-      2767,
-      869
+      6895,
+      14022,
+      4083
     ],
     [
-      256,
-      1016,
-      3728
+      1309,
+      5042,
+      18649
     ]
-  ]
+  ],
+  "per_class": {
+    "Negativo": {
+      "precision": 0.6815217391304348,
+      "recall": 0.70224,
+      "f1": 0.691725768321513,
+      "support": 25000.0
+    },
+    "Neutro": {
+      "precision": 0.5539664981036663,
+      "recall": 0.56088,
+      "f1": 0.5574018126888217,
+      "support": 25000.0
+    },
+    "Positivo": {
+      "precision": 0.7793798060849214,
+      "recall": 0.74596,
+      "f1": 0.7623037933289731,
+      "support": 25000.0
+    }
+  }
 }

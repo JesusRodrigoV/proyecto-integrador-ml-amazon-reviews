@@ -1,0 +1,212 @@
+[
+    {
+        "model_name": "Random Forest",
+        "training_time_seconds": 1649.21,
+        "f1_macro": 0.6295,
+        "precision_macro": 0.6357,
+        "recall_macro": 0.6263,
+        "accuracy": 0.6263,
+        "per_class": {
+            "Negativo": {
+                "precision": 0.6298,
+                "recall": 0.6528,
+                "f1": 0.6411
+            },
+            "Neutro": {
+                "precision": 0.5089,
+                "recall": 0.5542,
+                "f1": 0.5305
+            },
+            "Positivo": {
+                "precision": 0.7684,
+                "recall": 0.672,
+                "f1": 0.717
+            }
+        },
+        "confusion_matrix": [
+            [
+                16319,
+                7383,
+                1298
+            ],
+            [
+                7381,
+                13854,
+                3765
+            ],
+            [
+                2210,
+                5989,
+                16801
+            ]
+        ]
+    },
+    {
+        "model_name": "XGBoost",
+        "training_time_seconds": 2003.09,
+        "f1_macro": 0.6592,
+        "precision_macro": 0.6628,
+        "recall_macro": 0.657,
+        "accuracy": 0.657,
+        "per_class": {
+            "Negativo": {
+                "precision": 0.669,
+                "recall": 0.6838,
+                "f1": 0.6763
+            },
+            "Neutro": {
+                "precision": 0.5393,
+                "recall": 0.5729,
+                "f1": 0.5556
+            },
+            "Positivo": {
+                "precision": 0.7802,
+                "recall": 0.7144,
+                "f1": 0.7458
+            }
+        },
+        "confusion_matrix": [
+            [
+                17094,
+                6673,
+                1233
+            ],
+            [
+                6878,
+                14322,
+                3800
+            ],
+            [
+                1578,
+                5562,
+                17860
+            ]
+        ]
+    },
+    {
+        "model_name": "DistilBERT + LoRA",
+        "training_time_seconds": 5667.81,
+        "f1_macro": 0.7402,
+        "precision_macro": 0.7432,
+        "recall_macro": 0.7381,
+        "accuracy": 0.7381,
+        "per_class": {
+            "Negativo": {
+                "precision": 0.749,
+                "recall": 0.7472,
+                "f1": 0.7481
+            },
+            "Neutro": {
+                "precision": 0.6175,
+                "recall": 0.6567,
+                "f1": 0.6365
+            },
+            "Positivo": {
+                "precision": 0.8631,
+                "recall": 0.8103,
+                "f1": 0.8359
+            }
+        },
+        "confusion_matrix": [
+            [
+                18680,
+                5949,
+                371
+            ],
+            [
+                5740,
+                16418,
+                2842
+            ],
+            [
+                520,
+                4222,
+                20258
+            ]
+        ]
+    },
+    {
+        "model_name": "Stacking Ensemble (Base)",
+        "training_time_seconds": 0,
+        "f1_macro": 0.5512,
+        "precision_macro": 0.5578,
+        "recall_macro": 0.548,
+        "accuracy": 0.548,
+        "per_class": {
+            "Negativo": {
+                "precision": 0.5773,
+                "recall": 0.5668,
+                "f1": 0.572
+            },
+            "Neutro": {
+                "precision": 0.4437,
+                "recall": 0.5091,
+                "f1": 0.4741
+            },
+            "Positivo": {
+                "precision": 0.6524,
+                "recall": 0.568,
+                "f1": 0.6073
+            }
+        },
+        "confusion_matrix": [
+            [
+                14170,
+                8055,
+                2775
+            ],
+            [
+                7480,
+                12728,
+                4792
+            ],
+            [
+                2894,
+                7905,
+                14201
+            ]
+        ]
+    },
+    {
+        "model_name": "Stacking + Threshold Tuning",
+        "training_time_seconds": 0,
+        "f1_macro": 0.5542,
+        "precision_macro": 0.5773,
+        "recall_macro": 0.5491,
+        "accuracy": 0.5491,
+        "per_class": {
+            "Negativo": {
+                "precision": 0.5793,
+                "recall": 0.5638,
+                "f1": 0.5714
+            },
+            "Neutro": {
+                "precision": 0.436,
+                "recall": 0.5733,
+                "f1": 0.4953
+            },
+            "Positivo": {
+                "precision": 0.7165,
+                "recall": 0.51,
+                "f1": 0.5959
+            }
+        },
+        "confusion_matrix": [
+            [
+                14095,
+                9153,
+                1752
+            ],
+            [
+                7374,
+                14333,
+                3293
+            ],
+            [
+                2862,
+                9387,
+                12751
+            ]
+        ]
+    }
+]

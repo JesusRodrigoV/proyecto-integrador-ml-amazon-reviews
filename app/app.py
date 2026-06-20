@@ -105,10 +105,10 @@ def tab_search(res):
                 st.markdown(
                     f"""
                     <div style="padding:10px; margin:8px 0; border-left:4px solid {color};
-                                border-radius:4px; background:#f8f9fa;">
+                                border-radius:4px; background:#f8f9fa; color:#1a1a1a;">
                         <strong>#{i + 1}</strong> | score: <code>{score:.4f}</code>
                         <span style="color:{color}; font-weight:bold;">| {meta['sentiment_label']}</span>
-                        <p style="margin:6px 0 0 0;">{meta['text'][:200]}</p>
+                        <p style="margin:6px 0 0 0; color:#1a1a1a;">{meta['text'][:200]}</p>
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -131,10 +131,10 @@ def tab_search(res):
                 st.markdown(
                     f"""
                     <div style="padding:10px; margin:8px 0; border-left:4px solid {color};
-                                border-radius:4px; background:#f8f9fa;">
+                                border-radius:4px; background:#f8f9fa; color:#1a1a1a;">
                         <strong>#{i + 1}</strong> | TF-IDF score: <code>{score:.4f}</code>
                         <span style="color:{color}; font-weight:bold;">| {meta['sentiment_label']}</span>
-                        <p style="margin:6px 0 0 0;">{meta['text'][:200]}</p>
+                        <p style="margin:6px 0 0 0; color:#1a1a1a;">{meta['text'][:200]}</p>
                     </div>
                     """,
                     unsafe_allow_html=True,

@@ -1,6 +1,6 @@
 services:
   mlflow:
-    image: python:3.10-slim
+    image: python:3.14-slim
     command: >
       sh -c "pip install mlflow -q &&
              mlflow server --host 0.0.0.0 --port 5000
@@ -26,6 +26,12 @@ services:
       - mlflow
     networks:
       - f4_network
+    command: >
+      sh -c "if [ ! -f models/faiss_index/index.faiss ]; then
+               echo '=== Construyendo indice FAISS desde embeddings ===' &&
+               python -m src.pipeline;
+             fi &&
+             streamlit run app/app.py --server.port=8501 --server.address=0.0.0.0"
 
 volumes:
   mlflow_data:

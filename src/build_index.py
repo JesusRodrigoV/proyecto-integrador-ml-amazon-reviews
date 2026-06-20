@@ -1,3 +1,4 @@
+import os
 import time
 import pickle
 import numpy as np
@@ -67,7 +68,8 @@ def build_index(params, data):
 
 
 def log_to_mlflow(params, stats):
-    mlflow.set_tracking_uri(params["mlflow"]["tracking_uri"])
+    tracking_uri = os.getenv("MLFLOW_TRACKING_URI") or params["mlflow"]["tracking_uri"]
+    mlflow.set_tracking_uri(tracking_uri)
     mlflow.set_experiment(params["mlflow"]["experiment_name"])
 
     with mlflow.start_run(run_name="build_index"):

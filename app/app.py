@@ -1,13 +1,18 @@
 import sys
+import time
 import pickle
 import numpy as np
 import faiss
 import torch
 import streamlit as st
 import joblib
+from dotenv import load_dotenv
 from transformers import AutoTokenizer, AutoModel
 from pathlib import Path
 from datetime import datetime
+import os
+
+load_dotenv()
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 from src.data_loader import load_config
@@ -21,11 +26,15 @@ SENTIMENT_COLORS = {"Negativo": "#e74c3c", "Neutro": "#f39c12", "Positivo": "#2e
 
 @st.cache_resource
 def load_resources():
+    t0 = time.time()
     params = load_config()
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    tokenizer = AutoTokenizer.from_pretrained(params["model"]["transformer_name"])
-    model = AutoModel.from_pretrained(params["model"]["transformer_name"]).to(device).eval()
+    t1 = time.time()
+    hf_token = os.getenv("HF_TOKEN")
+    tokenizer = AutoTokenizer.from_pretrained(params["model"]["transformer_name"], token=hf_token)
+    model = AutoModel.from_pretrained(params["model"]["transformer_name"], token=hf_token).to(device).eval()
+    print(f"[LOAD] Transformers: {time.time() - t1:.2f}s")
 
     index_path = Path(params["faiss"]["index_path"])
     id_map_path = Path(params["faiss"]["id_map_path"])
@@ -36,20 +45,29 @@ def load_resources():
     classifier = None
     lexical_searcher = None
 
+    t2 = time.time()
     if index_path.exists():
         index = faiss.read_index(str(index_path))
+        size_mb = index_path.stat().st_size / (1024 * 1024)
+        print(f"[LOAD] FAISS index ({size_mb:.0f} MB): {time.time() - t2:.2f}s")
+
+    t3 = time.time()
     if id_map_path.exists():
         with open(id_map_path, "rb") as f:
             id_map = pickle.load(f)
-        lexical_searcher = LexicalSearcher(id_map_path) 
-        
+        print(f"[LOAD] id_map ({id_map_path.stat().st_size / 1e6:.0f} MB): {time.time() - t3:.2f}s")
+        lexical_searcher = LexicalSearcher(id_map, params)
+
+    t4 = time.time()
     if logreg_path.exists():
         classifier = joblib.load(logreg_path)
+        print(f"[LOAD] Classifier: {time.time() - t4:.2f}s")
 
     index_date = None
     if index_path.exists():
         index_date = datetime.fromtimestamp(index_path.stat().st_mtime).strftime("%Y-%m-%d %H:%M")
 
+    print(f"[LOAD] Total: {time.time() - t0:.2f}s")
     return {
         "params": params,
         "device": device,

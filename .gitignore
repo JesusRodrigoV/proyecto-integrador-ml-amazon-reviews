@@ -52,6 +52,9 @@ Thumbs.db
 # Logs
 *.log
 
+# Environment
+.env
+
 
 models/embeddings/
 models/faiss_index/

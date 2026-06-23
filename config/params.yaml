@@ -21,6 +21,8 @@ faiss:
   index_path: "models/faiss_index/index.faiss"
   id_map_path: "models/faiss_index/id_map.pkl"
   embedding_dim: 768
+  tfidf_vectorizer_path: "models/faiss_index/tfidf_vectorizer.joblib"
+  tfidf_matrix_path: "models/faiss_index/tfidf_matrix.joblib"
 
 search:
   default_top_k: 10

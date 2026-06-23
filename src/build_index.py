@@ -4,7 +4,9 @@ import pickle
 import numpy as np
 import faiss
 import mlflow
+import joblib
 from pathlib import Path
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from src.data_loader import load_config, load_embeddings_and_metadata
 
@@ -49,6 +51,16 @@ def build_index(params, data):
 
     with open(params["faiss"]["id_map_path"], "wb") as f:
         pickle.dump(id_map, f)
+
+    tfidf_vec_path = Path(params["faiss"]["tfidf_vectorizer_path"])
+    tfidf_mat_path = Path(params["faiss"]["tfidf_matrix_path"])
+    texts = [m["text"] for m in id_map]
+    if texts:
+        vectorizer = TfidfVectorizer(stop_words="english")
+        corpus_matrix = vectorizer.fit_transform(texts)
+        joblib.dump(vectorizer, tfidf_vec_path)
+        joblib.dump(corpus_matrix, tfidf_mat_path)
+        print(f"[BUILD] TF-IDF persistido: {tfidf_vec_path.name}, {tfidf_mat_path.name}")
 
     print(f"[BUILD] Index FAISS creado: {n_samples} vectores, dim={dim}")
     print(f"[BUILD] Tiempo: {build_time:.2f}s")

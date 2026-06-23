@@ -231,13 +231,13 @@ Para generarlos desde cero se deben correr los notebooks en orden (F3-A primero,
 
 ### Fase 3 — DistilBERT
 
-| Modelo                        | F1 Macro |
-| ----------------------------- | -------- |
-| LogisticRegression (baseline) | 0.6660   |
-| Random Forest                 | 0.6320   |
-| XGBoost                       | 0.6644   |
-| LoRA                          | 0.7146   |
-| **Full Fine-Tune**            | **0.73** |
+| Modelo                           | F1 Macro |
+| -------------------------------- | -------- |
+| Logistic Regression (baseline)   | 0.6705   |
+| Random Forest                    | 0.6295   |
+| XGBoost                          | 0.6592   |
+| **DistilBERT + LoRA**            | **0.7380** |
+| Stacking + Threshold Tuning      | **0.7391** |
 
 ---
 
